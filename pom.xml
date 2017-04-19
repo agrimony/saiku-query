@@ -10,18 +10,6 @@
 	<name>query</name>
 	<url>http://maven.apache.org</url>
 
-	<distributionManagement>
-		<repository>
-			<id>deployment</id>
-			<name>Internal Releases</name>
-			<url>http://repo.meteorite.bi/content/repositories/alabs-release-local/</url>
-		</repository>
-		<snapshotRepository>
-			<id>deployment</id>
-			<name>Internal Snapshots</name>
-			<url>http://repo.meteorite.bi/content/repositories/alabs-snapshot-local/</url>
-		</snapshotRepository>
-	</distributionManagement>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
@@ -78,7 +66,7 @@
 	<repositories>
         <repository>
             <id>pentaho-third-party</id>
-            <url>http://nexus.pentaho.org/content/repositories/proxied-3rd-party-releases/</url>
+            <url>http://nexus.pentaho.org/content/repositories/proxy-public-3rd-party-release/</url>
         </repository>
         <repository>
             <id>pentaho-public-release</id>
@@ -112,7 +100,7 @@
 		<dependency>
 			<groupId>pentaho</groupId>
 			<artifactId>mondrian</artifactId>
-			<version>3.9.0.2</version>
+			<version>4.4-lagunitas-SNAPSHOT-with-kylin-dialect</version>
 			<exclusions>
 				<exclusion>
 					<groupId>javax.servlet</groupId>
@@ -143,10 +131,10 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.saiku</groupId>
-			<artifactId>saiku-query</artifactId>
-			<version>0.1-SNAPSHOT</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.saiku</groupId>-->
+			<!--<artifactId>saiku-query</artifactId>-->
+			<!--<version>0.1-SNAPSHOT</version>-->
+		<!--</dependency>-->
 	</dependencies>
 </project>
