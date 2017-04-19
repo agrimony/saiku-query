@@ -1,5 +1,11 @@
 package mondrian.olap4j;
 
+import mondrian.olap.Annotation;
+import mondrian.olap.LocalizedProperty;
+import mondrian.olap.OlapElement;
+import mondrian.olap.Role;
+import mondrian.rolap.RolapConnection;
+import mondrian.server.Locus;
 import org.olap4j.OlapException;
 import org.olap4j.impl.ArrayNamedListImpl;
 import org.olap4j.impl.Named;
@@ -9,13 +15,6 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-
-import mondrian.olap.Annotation;
-import mondrian.olap.OlapElement;
-import mondrian.olap.Role;
-import mondrian.olap.Util;
-import mondrian.rolap.RolapConnection;
-import mondrian.server.Locus;
 
 /**
  * Implementation of {@link Level}
@@ -82,36 +81,37 @@ public class MondrianOlap4jLevel
     }
 
     public Type getLevelType() {
-        if (level.isAll()) {
-            return Type.ALL;
-        }
-        switch (level.getLevelType()) {
-        case Regular:
-            return Type.REGULAR;
-        case TimeDays:
-            return Type.TIME_DAYS;
-        case TimeHalfYears:
-            return Type.TIME_HALF_YEAR;
-        case TimeHours:
-            return Type.TIME_HOURS;
-        case TimeMinutes:
-            return Type.TIME_MINUTES;
-        case TimeMonths:
-            return Type.TIME_MONTHS;
-        case TimeQuarters:
-            return Type.TIME_QUARTERS;
-        case TimeSeconds:
-            return Type.TIME_SECONDS;
-        case TimeUndefined:
-            return Type.TIME_UNDEFINED;
-        case TimeWeeks:
-            return Type.TIME_WEEKS;
-        case TimeYears:
-            return Type.TIME_YEARS;
-        case Null:
-        default:
-            throw Util.unexpected(level.getLevelType());
-        }
+//        if (level.isAll()) {
+//            return Type.ALL;
+//        }
+        return level.getLevelType();
+//        switch (level.getLevelType()) {
+//        case Regular:
+//            return Type.REGULAR;
+//        case TimeDays:
+//            return Type.TIME_DAYS;
+//        case TimeHalfYears:
+//            return Type.TIME_HALF_YEAR;
+//        case TimeHours:
+//            return Type.TIME_HOURS;
+//        case TimeMinutes:
+//            return Type.TIME_MINUTES;
+//        case TimeMonths:
+//            return Type.TIME_MONTHS;
+//        case TimeQuarters:
+//            return Type.TIME_QUARTERS;
+//        case TimeSeconds:
+//            return Type.TIME_SECONDS;
+//        case TimeUndefined:
+//            return Type.TIME_UNDEFINED;
+//        case TimeWeeks:
+//            return Type.TIME_WEEKS;
+//        case TimeYears:
+//            return Type.TIME_YEARS;
+//        case Null:
+//        default:
+//            throw Util.unexpected(level.getLevelType());
+//        }
     }
 
     public NamedList<Property> getProperties() {
@@ -184,13 +184,13 @@ public class MondrianOlap4jLevel
 
     public String getCaption() {
         return level.getLocalized(
-            OlapElement.LocalizedProperty.CAPTION,
+            LocalizedProperty.CAPTION,
             olap4jSchema.getLocale());
     }
 
     public String getDescription() {
         return level.getLocalized(
-            OlapElement.LocalizedProperty.DESCRIPTION,
+            LocalizedProperty.DESCRIPTION,
             olap4jSchema.getLocale());
     }
 
